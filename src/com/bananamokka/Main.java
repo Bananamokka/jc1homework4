@@ -1,5 +1,6 @@
 package com.bananamokka;
 
+import com.bananamokka.Domain.CallCenter;
 import com.bananamokka.Domain.Calls;
 
 import java.util.concurrent.Semaphore;
@@ -11,11 +12,10 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("Колл-центр начал работу");
+        CallCenter callCenterThread = new CallCenter();
+        callCenterThread.start();
 
         Calls.Calls(20);
-
-        System.out.println("Колл-центр закончил работу");
 
     }
 }
